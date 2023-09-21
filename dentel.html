@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #disp{
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="css/dentsl.css">
+</head>
+<body>
+    <div id="videoWrapper">
+        <video poster="https://sb.vox1.net/video/poligonBG.jpg" playsinline autoplay muted loop>
+          <source src="/learnjs/imgs/_import_615bef0e4f9c36.40789156_FPpreview.mp4" type="video/mp4">
+        </video>
+        <div class="caption">
+          <div class="contents">
+            <h2>Dentle-Treatments</h2><br><br>
+            <span>Select Treatments :-</span>
+            <select name="tretment" id="tretment" onchange="return hendleChange()">
+                <option value="#">--Select Treatment--</option>
+                <option value="tc">Teeth Cleanings</option>
+                <option value="fi">Fillings</option>
+                <option value="rct">Root Canal Treatment</option>
+                <option value="rctc">RCT+Cover</option>
+                <option value="br">Braces/Invisalign</option>
+            </select>
+            <br><br>
+            <div id="disp">
+                <table border="2" id="displ">
+                    <tr>
+                        <th>Treatment</th>
+                        <th>Seating</th>
+                        <th>Costing</th>
+                    </tr>
+                    <tr>
+                        <td id="tret"></td>
+                        <td id="seating"></td>
+                        <td id="costing"></td>
+                    </tr>
+                </table><br><br>
+                <span>Apt Date:-</span>
+                <input type="date" id="AptDate">
+                <br><br>
+                <button id="book" onclick="hendleBook()"><i class="fa fa-refresh fa-spin"></i> Book-Appointment </button>
+                <br><br>
+                <div id="tr-plan">
+          </div>
+        </div>
+      
+      </div>
+      <script src="js/dentel.js"></script>
+</body>
+</html>
