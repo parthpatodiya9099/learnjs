@@ -75,5 +75,6 @@ const hendleBook = () => {
     } 
 
     document.getElementById("tr-plan").innerHTML=print;
+    console.log(print);
   
 }
