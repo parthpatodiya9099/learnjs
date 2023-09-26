@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/learnjs/css/insuarance.css">
+    <style>
+        #disp{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form action="" onsubmit="return handlesubmit()">
+        <div class="contener">
+            <div class="hader">
+                <h2> Insuarance Syatem </h2>
+            </div>
+        
+        <br><br>
+        <span>Name:-</span>
+        <input type="text" id="name">
+        <br><br>
+        <span>Date Of Birth :-</span>
+        <input type="date" id="date">
+        <br><br>
+        <span>Mobile Number:-</span>
+        <input type="number" id="number">
+        <br><br>
+        <span>Occupation :-</span>
+        <select name="Occupation" id="Occupation">
+            <option value="sa">Salaried</option>
+            <option value="se">Self-Employee</option>
+        </select>
+        <br><br>
+        <span>Annual Income:-</span>
+        <select name="Annual" id="Annual">
+            <option value="0">--Select--</option>
+            <option value="a">0-3 Lakh</option>
+            <option value="b">3-5 Lakh</option>
+            <option value="c">5-10 Lakh</option>
+            <option value="d">Above 10 Lakh</option>
+        </select>
+        <br><br>
+        <span>Insuarance Amount :-</span>
+        <input type="number" id="ins_amount"><br>
+        <span id="error"></span>
+        <br><br>
+        <span>Smoke:-</span>
+        <select name="Smoke" id="smoke">
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select>
+        <br><br>
+        <input type="submit">
+    </div>
+    </form>
+    <div class="table">
+        <p id="disp"></p>
+    </div>
+
+    
+    <script src="/learnjs/js/insuarance.js"></script>
+</body>
+</html>

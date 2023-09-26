@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    font-style:initial;
+    /* background-image: url(../imgs/health-care-medical-insurance-life-family-car-travel-house-concept-wooden-block-with-icon-healthcare-blue-background_20693-1183.avif); */
+    background-position:center;
+    background-size: cover;
+    /* background-color: darkcyan; */
+}
+.contener{
+    width: 100%;
+    /* border: 2px solid black; */
+    margin: 0 auto;
+    text-align: center;
+    
+    /* background-color: darkcyan; */
+}
+.hader{
+    width: 100%;
+    /* border: 2px solid black; */
+    background-color: cadetblue;
+}
+table{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+input{
+    width: 130px;
+    height: 28px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+option{
+    width: 130px;
+    border: 2px solid black;
+}
+#error{
+    color: red;
+    margin-left: 180px;
+    font-size: 14px;
+}
+#error1{
+    color: red;
+    margin-left: 180px;
+    font-size: 14px;
+}
+
+  
