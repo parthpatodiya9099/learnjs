@@ -54,7 +54,7 @@ const hendleBook = () => {
     
     let print = '';
 
-    print += '<table border="2"><tr><th>Treatment</th><th>Seating-Date</th><th>Costing</th></tr>';
+    print += '<table border="2"><tr><th>Treatment</th><th>Seating-Date</th><th>Costing</th><th>Action</th></tr>';
 
     for (let i=1; i<=final_s; i++) {
         if(i === 1){
@@ -62,11 +62,11 @@ const hendleBook = () => {
             print += "<td rowspan="+final_s+">"+treatment+"</td>"
             print += "<td>"+ dateAp.toLocaleDateString() +"</td>"
             print += "<td>"+fcost+"</td>"
+            print += "<td rowspan="+final_s+">"+`<button onclick = handledelete(${i})><i class="fa-solid fa-trash"></i></button>`+"</td>"
             print += "</tr>"
         }else{
             dateAp.setDate(dateAp.getDate() + 7);
             print += "<tr>"
-            // print += "<td>"+" "+"</td>"
             print += "<td>"+ dateAp.toLocaleDateString() +"</td>"
             print += "<td>"+fcost+"</td>"
             print += "</tr>"
@@ -75,6 +75,10 @@ const hendleBook = () => {
     } 
 
     document.getElementById("tr-plan").innerHTML=print;
-    console.log(print);
+    
   
+}
+const handledelete=(i)=>{
+
+   
 }

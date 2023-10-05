@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+
+<html lang="es">
+    
+    <head>
+        <title>COMPAÑÍA DE SEGUROS</title>
+        <meta charset="utf-8" />
+        <meta name="description" content="atm compañia de seguros" />
+        <meta name="keywords" content ="moto, seguro, compañia, argentina" />
+        <link rel="stylesheet" href="css/hotel.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+     </head>
+    
+    <body>
+        <header>
+            <!--<a href="index.html"><img id="logo" src="images/*.png" width=100px alt="LOGO" /></a>-->
+          <p id="logoAltern">ASEGURADORA</p>
+            <div class="browserAdd"><form method="post" action="consulta.html"><input type="text" placeholder="POLIZA | COTIZACION | PROPUESTA | DNI | DOMINIO" title="Coloque póliza, propuesta, dni o dominio" required /><p id="add"><a  title="Nueva cotizacion" href="nueva.html">+</a></p></form></div>
+            <a href="#"><div id="menu">
+                <div class="menuLine"></div>
+                <div class="menuLine"></div>
+                <div class="menuLine"></div>
+            </div></a>
+        </header>
+        
+        <section id="mainWrapper">
+            <!--<div class="biggerBox"></div>-->
+            <h1> <span class="cantPolizas">Insuarance</span> System</h1>
+                <div class="boxes">
+                    
+                    <span>Name:-</span>
+        <input type="text" id="name">
+        <br><br>
+        <span>Date Of Birth :-</span>
+        <input type="date" id="date">
+        <br><br>
+        <span>Mobile Number:-</span>
+        <input type="number" id="number">
+        <br><br>
+        <span>Occupation :-</span>
+        <select name="Occupation" id="Occupation">
+            <option value="sa">Salaried</option>
+            <option value="se">Self-Employee</option>
+        </select>
+        <br><br>
+        <span>Annual Income:-</span>
+        <select name="Annual" id="Annual">
+            <option value="0">--Select--</option>
+            <option value="a">0-3 Lakh</option>
+            <option value="b">3-5 Lakh</option>
+            <option value="c">5-10 Lakh</option>
+            <option value="d">Above 10 Lakh</option>
+        </select>
+        <br><br>
+        <span>Insuarance Amount :-</span>
+        <input type="number" id="ins_amount"><br>
+        <span id="error"></span>
+        <br><br>
+        <span>Smoke:-</span>
+        <select name="Smoke" id="smoke">
+            <option value="y">Yes</option>
+            <option value="n">No</option>
+        </select>
+        <br><br>
+        <input type="submit">
+    </div>
+    </form>
+    <div class="table">
+        <p id="disp"></p>
+    </div>
+
+                </div>
+        </section>
+    
+        
+    </body>
+
+
+</html>

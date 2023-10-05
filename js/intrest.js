@@ -52,6 +52,8 @@ function handlesubmit() {
         ans=(p * r * t) / 100;
     }else if(select === 'm'){
         ans=(p * r * t) / 1200;
+    }else{
+        ans='';
     }
     console.log(ans);
 

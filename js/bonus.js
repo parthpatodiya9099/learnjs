@@ -1,19 +1,31 @@
-function handlesubmit(){
+function handlesubmit() {
 
-    let x=parseFloat(document.getElementById("bonus").value);
-    console.log("salary is :",x);
-    let x1=parseFloat(document.getElementById("bonus1").value);
-    console.log("salary is :",x1);
-    let x2=parseFloat(document.getElementById("bonus2").value);
-    console.log("salary is :",x2);
+    let x = parseFloat(document.getElementById("bonus").value);
 
-    let bs;
-    bs=x*0.5;
-    console.log("bonus is : ",bs);
+    let x1 = parseFloat(document.getElementById("bonus1").value);
 
-    bs=x1*0.3;
-    console.log("bonus is : ",bs);
+    let x2 = parseFloat(document.getElementById("bonus2").value);
+    let bs='';
+    
+        if (x) {
+            bs = x * 0.5;
+        } else {
+            document.getElementById("bonusE").innerHTML = "Please Enter Salary"
+        }
+        if (x1) {
+            bs = x1 * 0.3;
+        } else {
+            document.getElementById("bonus1E").innerHTML = "Please Enter Salary"
+        }
+        if (x2) {
+            bs = x2 * 0.2;
+        } else {
+            document.getElementById("bonus2E").innerHTML = "Please Enter Salary"
+        }
+ 
+    
 
-    bs=x2*0.2;
-    console.log("bonus is : ",bs);
+    document.getElementById("ans").innerHTML = "Bonus is:-" + bs;
+
+    return false;
 }
