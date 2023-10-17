@@ -16,7 +16,7 @@
 //     }
 // ];
 
-// person.map((v,i)=>{
+// person.map((v)=>{
 //     console.log(v.name,v.age);
 // });
 

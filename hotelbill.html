@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/hotelbill.css">
+ 
+</head>
+<body>
+    <div class="cointener">
+        <div class="hader">
+            <h1>HOTEL BILL COLLECTION SYSTEM</h1>
+        </div>
+        <div class="work">
+            <form action="" onsubmit="return handlesubmit() ">
+            <input type="date" id="tdate">
+            <br><br><br>
+            <span>Select Table :-</span>
+            <select name="table" id="table">
+                <option value="#">--Select--</option>              
+                <option value="1">TABLE-1</option>
+                <option value="2">TABLE-2</option>
+                <option value="3">TABLE-3</option>
+                <option value="4">TABLE-4</option>
+                <option value="5">TABLE-5</option>
+                <option value="6">TABLE-6</option>
+                <option value="7">TABLE-7</option>
+                <option value="8">TABLE-8</option>
+                <option value="9">TABLE-9</option>
+                <option value="10">TABLE-10</option>
+            </select>
+            <span>Food:- </span>
+            <select name="food" id="food"> 
+                <option value="#">--Select--</option>               
+                <option value="Panjabi">Panjabi</option>
+                <option value="Chinees">Chinees</option>
+                <option value="South-Indian">South-Indian</option>
+            </select>
+            <span>No.OF Parson:- </span>
+            <input type="number" id="parson">
+            <br><p id="error"></p><br>
+            <input type="submit" id="submit">
+            <br><br>
+        </form>
+        </div>
+        <table id="disp" border="2">           
+            <tr>
+                <th>Sr No.</th>
+                <th>Date</th>
+                <th>Table</th>
+                <th>Food</th>
+                <th>No.Of Parson</th>
+                <th>Total Bill</th>
+                <th>Action</th>
+            </tr>
+        </table>   
+
+    </div>
+   
+    <script src="js/hotelbill.js"></script>
+</body>
+</html>

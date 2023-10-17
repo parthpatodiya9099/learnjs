@@ -11,7 +11,7 @@ const handlesubmit=()=> {
     }else{
         arr.push(todo);
     }
-    update=null;
+    update=null;    
     document.getElementById("todo").value='';
     display();
    
