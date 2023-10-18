@@ -1,8 +1,5 @@
 let update = null;
-class Budget {
-    budget;
-    expence;
-    expamount;    
+class Budget {    
     constructor() {
         this.budget = document.getElementById("budget");
         this.expence = document.getElementById("expence");
@@ -11,7 +8,7 @@ class Budget {
     handlesubmit() {
         event.preventDefault();
         let bgt = parseInt(this.budget.value)       
-        if ( bgt< 0) {
+        if ( bgt < 0) {
             event.preventDefault()
             document.getElementById("error1").innerHTML = "Please Enter Valid Value";
         }else if(bgt == '' || isNaN(bgt)){
@@ -19,14 +16,21 @@ class Budget {
             document.getElementById("error1").innerHTML = "Please Enter  Value";
         }else{
             document.getElementById("error1").innerHTML = " ";
+           
             document.getElementById("ff1").innerHTML='$'+this.budget.value;
-            this.handledata();        
-        }                 
+            this.handledata();                  
+        } 
+        // window.location.reload();                
     }
     handledata(){
         let bgt = parseInt(this.budget.value);
         let exp = 0;
-        let balance = bgt - exp;
+        let balance=0;
+        if(balance){
+            balance=0;           
+        }else{
+            balance = bgt - exp;
+        }
         document.getElementById("ff3").innerHTML='$'+balance;
     }
 
@@ -73,20 +77,54 @@ class Budget {
                 update=null;    
                 this.displaydata();
                 window.location.reload();
+               
             }           
     }
     displaydata(){
-        let localdata = JSON.parse(localStorage.getItem("budget"));
+        let localdata=JSON.parse(localStorage.getItem("budget"))
+        
         let exp = localdata.reduce((acc, v) =>acc + v.cost,0);
-        let balance;
+        let balance=0;
         let displayref = document.getElementById("disp1");
         let displayref2 = document.getElementById("disp2");
-        let displayref3 = document.getElementById("disp3");
+        let displayref3 = document.getElementById("disp3");        
+       
+        let btnref = document.getElementById("btn");
+
+      
+        let btnA = document.createElement("button");
+        btnA.addEventListener('click',()=>this.handleacc())
+        let btnTA =  document.createTextNode("A");
+        btnA.appendChild(btnTA);
+        btnref.appendChild(btnA);
+
+        let btnD = document.createElement("button");
+        btnD.addEventListener('click',()=>this.handledes())
+        let btnTD =  document.createTextNode("D");
+        btnD.appendChild(btnTD);
+        btnref.appendChild(btnD);
+
+        let btnref2 = document.getElementById("btn2");
+
+        let btna = document.createElement("button");
+        btna.addEventListener('click',()=>this.accending())
+        let btnTa =  document.createTextNode("A");
+        btna.appendChild(btnTa);
+        btnref2.appendChild(btna);
+
+       
+
+        let btnd = document.createElement("button");
+        btnd.addEventListener('click',()=>this.Descending())
+        let btnTd =  document.createTextNode("D");
+        btnd.appendChild(btnTd);
+        btnref2.appendChild(btnd);
 
         localdata.map((v)=>{
             
             let tr = document.createElement("tr");
             let td1 = document.createElement("td");
+            td1.setAttribute("id","acc1")
             let td1t = document.createTextNode("-"+v.cost);
 
             td1.appendChild(td1t);
@@ -125,19 +163,21 @@ class Budget {
         document.getElementById("ff3").innerHTML='$'+balance;
        
     }
-      
+    
  }
 class crud extends Budget{
+    constructor(){
+        super();
+    }
     DisplayAll(){
         this.displaydata()
-        // window.document.body.style.cursor = "wait";  
     }  
     handleremove(id){
         let localdata = JSON.parse(localStorage.getItem('budget'));
-    
+
         let fdata= localdata.filter((v)=>v.id !== id)
         localStorage.setItem("budget", JSON.stringify(fdata));
-        window.location.reload()
+        window.location.reload();
           
     }
     handleedit(id){
@@ -149,7 +189,42 @@ class crud extends Budget{
        
         
         update= localdata[index].id;
-    }   
+    }
+    handleacc(){
+        let localdata = JSON.parse(localStorage.getItem("budget"));
+        let sdtaa=localdata.sort((a,b)=>a.cost-b.cost);
+        localStorage.setItem("budget",JSON.stringify(sdtaa));
+        window.location.reload()
+    
+        document.getElementById("acc1").innerHTML=sdtaa
+    }
+    handledes(){
+        let localdata = JSON.parse(localStorage.getItem("budget"));
+        let sdtaa=localdata.sort((a,b)=>b.cost-a.cost);
+        localStorage.setItem("budget",JSON.stringify(sdtaa));
+        window.location.reload()
+    
+        document.getElementById("acc1").innerHTML=sdtaa
+    }
+    accending(){
+        let localdata = JSON.parse(localStorage.getItem("budget"));
+        let data = localdata.sort((a,b)=>a.name < b.name ?-1:1);
+        
+        localStorage.setItem("budget",JSON.stringify(data));
+        window.location.reload()
+    
+        document.getElementById("acc1").innerHTML=data;
+    }
+    Descending(){
+        let localdata = JSON.parse(localStorage.getItem("budget"));
+        let data = localdata.sort((a,b)=>a.name > b.name ?-1:1);
+        
+        localStorage.setItem("budget",JSON.stringify(data));
+        window.location.reload()
+    
+        document.getElementById("acc1").innerHTML=data;
+    }
+    
 }
 
 let b = new Budget();
@@ -167,5 +242,5 @@ expformref.addEventListener("submit",function(){
 let c = new crud();
 c.DisplayAll();
 
-
-
+c. this.handleacc();
+c.this.handledes();
