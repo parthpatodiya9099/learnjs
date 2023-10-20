@@ -51,7 +51,7 @@ class Budget {
                     let obj={
                         "id":id,
                         "balance":bgt,
-                        "name":this.expence.value ,
+                        "name":this.expence.value,
                         "cost":exp,
                     }
                     let localdata = JSON.parse(localStorage.getItem("budget"));
@@ -93,32 +93,39 @@ class Budget {
 
       
         let btnA = document.createElement("button");
+        btnA.setAttribute("id","buttton")
         btnA.addEventListener('click',()=>this.handleacc())
         let btnTA =  document.createTextNode("A");
         btnA.appendChild(btnTA);
         btnref.appendChild(btnA);
 
         let btnD = document.createElement("button");
+        btnD.setAttribute("id","buttton")
         btnD.addEventListener('click',()=>this.handledes())
-        let btnTD =  document.createTextNode("D");
+        let btnTD =  document.createTextNode(" D ");
         btnD.appendChild(btnTD);
         btnref.appendChild(btnD);
 
         let btnref2 = document.getElementById("btn2");
 
         let btna = document.createElement("button");
+        btna.setAttribute("id","buttton")
         btna.addEventListener('click',()=>this.accending())
         let btnTa =  document.createTextNode("A");
         btna.appendChild(btnTa);
-        btnref2.appendChild(btna);
-
-       
+        btnref2.appendChild(btna);       
 
         let btnd = document.createElement("button");
+        btnd.setAttribute("id","buttton")
         btnd.addEventListener('click',()=>this.Descending())
         let btnTd =  document.createTextNode("D");
         btnd.appendChild(btnTd);
         btnref2.appendChild(btnd);
+
+        let searchref = document.getElementById("search");
+        
+        searchref.addEventListener("keyup",()=>this.searchfunction());
+
 
         localdata.map((v)=>{
             
@@ -168,6 +175,7 @@ class Budget {
 class crud extends Budget{
     constructor(){
         super();
+        this.search = document.getElementById("search");
     }
     DisplayAll(){
         this.displaydata()
@@ -224,7 +232,29 @@ class crud extends Budget{
     
         document.getElementById("acc1").innerHTML=data;
     }
-    
+    searchfunction(){       
+        let localdata = JSON.parse(localStorage.getItem("budget"));
+
+            let filter = document.getElementById("search").value;
+            let table1 = document.getElementById("disp1");
+            let table2 = document.getElementById("disp2");
+            let table3 = document.getElementById("disp3");
+            localdata.map((v)=>{
+                if(v.name == filter || v.cost == filter){
+                    let index = localdata.findIndex((v)=>v.name==filter||v.cost == filter);
+                    table1.style.display='none';
+                    table2.style.display='none';
+                    table3.style.display='none';
+                    table1.innerHTML="-"+localdata[index].cost;
+                    table2.innerHTML=localdata[index].name;
+                    table3.innerHTML=table3;
+                }else{                    
+                    event.preventDefault()
+                    table1.style.display='block';
+                    table2.style.display='block';
+                }
+            })
+    }
 }
 
 let b = new Budget();
@@ -242,5 +272,4 @@ expformref.addEventListener("submit",function(){
 let c = new crud();
 c.DisplayAll();
 
-c. this.handleacc();
-c.this.handledes();
+
